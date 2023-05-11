@@ -6,10 +6,10 @@
     <img src="https://avatars.githubusercontent.com/u/65290559?v=4" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">React Chat App</h3>
+  <h3 align="center">Arduino Alarmanlage</h3>
 
   <p align="center">
-    A little inspiration for people who want to start a chat app with React!
+    A little inspiration for people who want to start with Arduino!
     <br />
     <a href="https://github.com/noahzmr/react-chat"><strong>Explore the docs »</strong></a>
     <br />
@@ -67,13 +67,17 @@ Egal, ob Sie bereits Erfahrung mit Arduino und Raspberry Pi haben oder ob Sie ne
 
 Also lassen Sie uns gemeinsam in diese faszinierende Welt eintauchen und entdecken, wie wir mit Arduino und Raspberry Pi eine beeindruckende Alarmanlage simulieren können!
 
-### built with
+### Built with
+
+<div style='display: flex; flex-direction: row; justify-content: space-around; align-items: center;'>
 
 [![Arduino](https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white)](https://www.arduino.cc/)
 [![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-A22846?style=for-the-badge&logo=Raspberry%20Pi&logoColor=white)](https://www.raspberrypi.org/)
 [![Elegoo](https://img.shields.io/badge/Elegoo-0E68C2?style=for-the-badge&logo=elegoo&logoColor=white)](https://www.elegoo.com/)
 [![Tinkercad](https://img.shields.io/badge/Tinkercad-222F29?style=for-the-badge&logo=tinkercad&logoColor=white)](https://www.tinkercad.com/)
 [![Mermaid](https://img.shields.io/badge/Mermaid-003B6F?style=for-the-badge&logo=mermaid&logoColor=white)](https://mermaid-js.github.io/mermaid/)
+
+</div>
 
 ## Code
 
