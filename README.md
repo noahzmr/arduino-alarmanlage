@@ -2,7 +2,7 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/noahzmr/react-chat">
+  <a href="https://github.com/noahzmr/arduino-alarmanlage">
     <img src="https://avatars.githubusercontent.com/u/65290559?v=4" alt="Logo" width="80" height="80">
   </a>
 
@@ -11,14 +11,14 @@
   <p align="center">
     A little inspiration for people who want to start with Arduino!
     <br />
-    <a href="https://github.com/noahzmr/react-chat"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/noahzmr/arduino-alarmanlage"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://chat.noerkelit.online/">View Live Demo</a>
     ·
-    <a href="https://github.com/noahzmr/react-chat/issues">Report Bug</a>
+    <a href="https://github.com/noahzmr/arduino-alarmanlage/issues">Report Bug</a>
     ·
-    <a href="https://github.com/noahzmr/react-chat/discussions">Request Feature</a>
+    <a href="https://github.com/noahzmr/arduino-alarmanlage/discussions">Request Feature</a>
   </p>
 </div>
 
