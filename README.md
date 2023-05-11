@@ -91,23 +91,23 @@ Bitte beachten Sie, dass der Code als Referenz und Lehrzwecken dient. Sie könne
 
 ```mermaid
 graph TD
-  A[setup()] -->|Initialisierung| B[LiquidCrystal-Initialisierung]
-  B -->|Anzeige| C[displayMsg()]
-  B -->|LED-Farbe setzen| D[setColor()]
-  A -->|Hauptschleife| E[loop()]
-  E -->|Button-Doppelklick abwarten| F[waitForButtonDoublePress()]
-  F -->|Button-Status überprüfen| G[digitalRead()]
+  A[setup] -->|Initialisierung| B[LiquidCrystal-Initialisierung]
+  B -->|Anzeige| C[displayMsg]
+  B -->|LED-Farbe setzen| D[setColor]
+  A -->|Hauptschleife| E[loop]
+  E -->|Button-Doppelklick abwarten| F[waitForButtonDoublePress]
+  F -->|Button-Status überprüfen| G[digitalRead]
   G -->|Button losgelassen| F
-  G -->|Button gedrückt| H[metalConnection()]
-  H -->|Metallverbindung überprüfen| I[analogRead()]
-  I -->|Metallverbindung erkannt| J[displayMsg()]
+  G -->|Button gedrückt| H[metalConnection]
+  H -->|Metallverbindung überprüfen| I[analogRead]
+  I -->|Metallverbindung erkannt| J[displayMsg]
   J -->|Alarm ausgelöst| K[alarmTriggered = true]
   K -->|Blinken in Rot| D
-  J -->|Alarm bereits ausgelöst| L[blink("alert")]
+  J -->|Alarm bereits ausgelöst| L[blink nach alert]
   L -->|Button-Doppelklick abwarten| F
   F -->|Doppelklick erkannt| M[!alarmEnabled]
   M -->|Blinken in Orange| D
-  M -->|Alarm bereits aktiviert| N[setAlarmOff()]
+  M -->|Alarm bereits aktiviert| N[setAlarmOff]
   N -->|Alarm deaktivieren| D
   H -->|Button-Doppelklick abwarten| F
   F -->|Doppelklick erkannt| N
