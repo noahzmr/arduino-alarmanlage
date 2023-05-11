@@ -1,92 +1,243 @@
+eier
 # Arduino Alarmanlage
 
+## Code
 
+### Variablen und Bibliotheken
 
-## Getting started
+```ino
+#include <LiquidCrystal.h>
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+const int rs = 9, en = 7, d4 = 6, d5 = 5, d6 = 4, d7 = 3, v0 = 10, a = 2, rw = 8;
+const int buttonPin = A0;
+const int touchPin = A1;
+bool alarmEnabled = false;
+bool alarmTriggered = false;
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://gitlab.autonubil.net/noerkelit/public-repo/arduino-alarmanlage.git
-git branch -M main
-git push -uf origin main
+LiquidCrystal lcd(rs, rw, en, d4, d5, d6, d7);
 ```
 
-## Integrate with your tools
+- Die Bibliothek `LiquidCrystal` wird für die Steuerung des LCD-Displays verwendet.
+- Die konstanten Variablen `rs`, `en`, `d4`, `d5`, `d6`, `d7`, `v0`, `a` und `rw` werden verwendet, um die verwendeten Pins für das LCD und andere Komponenten festzulegen.
+- `buttonPin` und `touchPin` definieren die Pins, an denen die Taster bzw. der Touch-Sensor angeschlossen sind.
+- `alarmEnabled` und `alarmTriggered` sind boolesche Variablen, die den Status der Alarmanlage speichern.
+- Das Objekt `lcd` wird erstellt, um die LiquidCrystal-Bibliothek zu verwenden.
 
-- [ ] [Set up project integrations](https://gitlab.autonubil.net/noerkelit/public-repo/arduino-alarmanlage/-/settings/integrations)
+### Setup-Funktion
 
-## Collaborate with your team
+Die setup()-Funktion wird einmal beim Start des Programms aufgerufen und initialisiert die erforderlichen Einstellungen:
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+```ino
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(touchPin, INPUT);
+  lcd.begin(16, 2);
+  pinMode(v0, OUTPUT);
+  analogWrite(v0, 100);
+  pinMode(a, OUTPUT);
+  analogWrite(a, 128);
+  pinMode(buttonPin, INPUT_PULLUP);
+  pinMode(11, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(9, OUTPUT);
+  setColor(0, 255, 0);
+  lcd.setCursor(0, 0);
+  lcd.print("Alarmanlage");
+  displayMsg("Unscharf");
+}
+```
 
-## Test and Deploy
+- `Serial.begin(9600)` initialisiert die serielle Kommunikation mit einer Baudrate von 9600.
+- `pinMode(touchPin, INPUT)` legt den Modus des Touch-Pins als Eingang fest.
+- `lcd.begin(16, 2)` initialisiert das LCD-Display mit 16 Zeichen pro Zeile und 2 Zeilen.
+- `pinMode(v0, OUTPUT)` und `analogWrite(v0, 100)` stellen den Ausgangsmodus und den Ausgangswert des Pins v0 ein.
+- `pinMode(a, OUTPUT)` und `analogWrite(a, 128)` stellen den Ausgangsmodus und den Ausgangswert des Pins a ein.
+- `pinMode(buttonPin, INPUT_PULLUP)` legt den Modus des Taster-Pins als Eingang mit Pull-Up-Widerstand fest.
+- `pinMode(11, OUTPUT)`, `pinMode(10, OUTPUT)` und `pinMode(9, OUTPUT)` legen die Modi der Pins 11, 10 und 9 als Ausgang fest.
+- `setColor(0, 255, 0)` ruft die Funktion `setColor()` auf und setzt die Farbe des RGB-LEDs auf Grün.
+- `lcd.setCursor(0, 0)` positioniert den Cursor auf der ersten Zeile und ersten Spalte des LCD-Displays.
+- `lcd.print("Alarmanlage")` gibt den Text "Alarmanlage" auf dem LCD-Display aus.
+- `displayMsg("Unscharf")` ruft die Funktion `displayMsg()` auf, um die Nachricht "Unscharf" auf der zweiten Zeile des LCD-Displays und über die serielle Kommunikation anzuzeigen.
 
-Use the built-in continuous integration in GitLab.
+### Loop-Funktion
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+Die `loop()`-Funktion wird kontinuierlich ausgeführt, nachdem die setup()-Funktion abgeschlossen ist:
 
-***
+```ino
+void loop()
+{
+  waitForButtonDoublePress();
+}
+```
 
-# Editing this README
+Die `loop()`-Funktion ruft die Funktion `waitForButtonDoublePress()` auf. Diese Funktion wird verwendet, um auf einen doppelten Tastendruck zu warten und entsprechende Aktionen auszuführen.
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+### displayMsg-Funktion
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+Die `displayMsg()`-Funktion dient zum Anzeigen einer Nachricht auf dem LCD-Display und über die serielle Kommunikation:
 
-## Name
-Choose a self-explaining name for your project.
+```ino
+void displayMsg(const char *msg)
+{
+  lcd.setCursor(0, 1);
+  lcd.print(msg);
+  Serial.println(msg);
+  delay(50);
+}
+```
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+- `lcd.setCursor(0, 1)` positioniert den Cursor auf der zweiten Zeile und ersten Spalte des LCD-Displays.
+- `lcd.print(msg)` gibt die übergebene Nachricht auf dem LCD-Display aus.
+- `Serial.println(msg)` sendet die Nachricht über die serielle Kommunikation.
+- `delay(50)` fügt eine kleine Verzögerung hinzu, um eine flüssige Anzeige zu gewährleisten.
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+### setColor-Funktion
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+Die `setColor()`-Funktion steuert die Farbe des RGB-LEDs:
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+```ino
+void setColor(int red, int green, int blue)
+{
+  analogWrite(13, red);
+  analogWrite(12, green);
+  analogWrite(11, blue);
+}
+```
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+`analogWrite(pin, value)` setzt den angegebenen Pin auf den angegebenen PWM-Wert (Pulsweitenmodulation). Hierbei werden die Pins 13, 12 und 11 verwendet, um die rote, grüne und blaue Farbkomponente des RGB-LEDs zu steuern.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+### blink-Funktion
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+Die `blink()`-Funktion steuert das Blinken des RGB-LEDs und enthält auch eine Funktionalität für einen doppelten Tastendruck:
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+### waitForButtonDoublePress-Funktion
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+Die `waitForButtonDoublePress()`-Funktion wartet auf einen doppelten Tastendruck und führt entsprechende Aktionen aus:
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+```ino
+void waitForButtonDoublePress()
+{
+  int buttonCount = 0;
+  int buttonState = HIGH;
+  Serial.print("Wait for button up: ");
+  while (digitalRead(buttonPin) != HIGH)
+  {
+    Serial.print(".");
+    delay(50);
+  }
+  Serial.print("\nStart wait for Click: ");
+  while (buttonCount < 2)
+  {
+    buttonState = digitalRead(buttonPin);
+    if (buttonState == HIGH)
+    {
+      Serial.print("~");
+      while (digitalRead(buttonPin) != LOW)
+      {
+        if (alarmEnabled)
+        {
+          metalConnection();
+        }
+        delay(50);
+      }
+      buttonCount++;
+      delay(250);
+      Serial.print("+");
+    }
+    delay(50);
+  }
+  Serial.print("\n");
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+  if (buttonCount == 2)
+  {
+    Serial.print("Double Click!\n");
+    if (!alarmEnabled)
+    {
+      blink("orange");
+    }
+    else
+    {
+      setAlarmOff();
+    }
+  }
+  buttonCount = 0;
+}
+```
 
-## License
-For open source projects, say how it is licensed.
+Die Funktion überprüft den Status des Taster-Pins, um einen Tastendruck zu erfassen und auf einen doppelten Tastendruck zu warten.
+Sobald ein doppelter Tastendruck erkannt wird, werden entsprechende Aktionen ausgeführt, z. B. das Aufrufen der `blink()`-Funktion oder das Deaktivieren des Alarms.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+### setAlarmOn-Funktion
+
+Die `setAlarmOn()`-Funktion aktiviert den Alarm:
+
+```ino
+void setAlarmOn()
+{
+  setColor(255, 0, 0);
+  displayMsg("Aktiv");
+  Serial.print("setAlarmOn\n");
+  alarmEnabled = true;
+}
+```
+
+Die Funktion ändert die Farbe des RGB-LEDs in Rot, zeigt die Nachricht "Aktiv" auf dem LCD-Display an und aktiviert den Alarm.
+
+### setAlarmOff-Funktion
+
+Die `setAlarmOff()`-Funktion deaktiviert den Alarm:
+
+```ino
+void setAlarmOff()
+{
+  setColor(0, 255, 0);
+  displayMsg("Inaktiv");
+  Serial.print("setAlarmOff\n");
+  alarmEnabled = false;
+  alarmTriggered = false;
+}
+```
+
+- Die Funktion ändert die Farbe des RGB-LEDs in Grün, zeigt die Nachricht "Inaktiv" auf dem LCD-Display an, deaktiviert den Alarm und setzt den Alarmauslösestatus zurück.
+
+### metalConnection-Funktion
+
+Die `metalConnection()`-Funktion überwacht die Verbindung zu einem Metallsensor und löst bei Bedarf den Alarm aus:
+
+```ino
+void metalConnection()
+{
+
+  int sensorValue = analogRead(touchPin);
+  if (alarmEnabled)
+  {
+    Serial.print("\nStart wait for action: ");
+    if (sensorValue < 1023)
+    {
+    }
+    else
+    {
+      displayMsg("ALARM");
+      if (alarmTriggered)
+      {
+        Serial.println("TRIGEERD THE ALERT");
+        Serial.println(sensorValue);
+        blink("alert");
+      }
+      else
+      {
+        Serial.println("Countdown for shutdown");
+        Serial.println(sensorValue);
+        alarmTriggered = true;
+        blink("red");
+      }
+      unsigned long startTime = millis();
+      while (millis() - startTime < 30000)
+      {
+        waitForButtonDoublePress();
+      }
+    }
+  }
+}
+```
