@@ -14,8 +14,6 @@
     <a href="https://github.com/noahzmr/arduino-alarmanlage"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://chat.noerkelit.online/">View Live Demo</a>
-    ·
     <a href="https://github.com/noahzmr/arduino-alarmanlage/issues">Report Bug</a>
     ·
     <a href="https://github.com/noahzmr/arduino-alarmanlage/discussions">Request Feature</a>
