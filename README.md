@@ -81,6 +81,38 @@ Also lassen Sie uns gemeinsam in diese faszinierende Welt eintauchen und entdeck
 
 ## Code
 
+Im Folgenden wird der Code der Anwendung präsentiert, und vorab ist das Abhängigkeitsdiagramm, das den Ablauf und die Interaktionen der verschiedenen Funktionen veranschaulicht. Der Code ist in logische Abschnitte unterteilt und wird jeweils erläutert, um das Verständnis zu erleichtern.
+
+Das Abhängigkeitsdiagramm zeigt die Zusammenhänge und Interaktionen der verschiedenen Funktionen innerhalb der Alarmanlagenanwendung. Es vermittelt einen Überblick über den Programmfluss und hilft dabei, die Beziehungen zwischen den Funktionen zu verstehen.
+
+Der Code ist in logische Abschnitte unterteilt und wird ausführlich erläutert, um das Verständnis zu erleichtern. Jeder Abschnitt behandelt einen bestimmten Aspekt der Alarmanlage, von der Initialisierung bis zur Behandlung von Alarmereignissen.
+
+Bitte beachten Sie, dass der Code als Referenz und Lehrzwecken dient. Sie können ihn für Ihre eigenen Projekte anpassen und erweitern.
+
+```mermaid
+graph TD
+  A[setup()] -->|Initialisierung| B[LiquidCrystal-Initialisierung]
+  B -->|Anzeige| C[displayMsg()]
+  B -->|LED-Farbe setzen| D[setColor()]
+  A -->|Hauptschleife| E[loop()]
+  E -->|Button-Doppelklick abwarten| F[waitForButtonDoublePress()]
+  F -->|Button-Status überprüfen| G[digitalRead()]
+  G -->|Button losgelassen| F
+  G -->|Button gedrückt| H[metalConnection()]
+  H -->|Metallverbindung überprüfen| I[analogRead()]
+  I -->|Metallverbindung erkannt| J[displayMsg()]
+  J -->|Alarm ausgelöst| K[alarmTriggered = true]
+  K -->|Blinken in Rot| D
+  J -->|Alarm bereits ausgelöst| L[blink("alert")]
+  L -->|Button-Doppelklick abwarten| F
+  F -->|Doppelklick erkannt| M[!alarmEnabled]
+  M -->|Blinken in Orange| D
+  M -->|Alarm bereits aktiviert| N[setAlarmOff()]
+  N -->|Alarm deaktivieren| D
+  H -->|Button-Doppelklick abwarten| F
+  F -->|Doppelklick erkannt| N
+```
+
 ### Variablen und Bibliotheken
 
 ```ino
