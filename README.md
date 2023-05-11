@@ -1,4 +1,3 @@
-eier
 # Arduino Alarmanlage
 
 ## Code
