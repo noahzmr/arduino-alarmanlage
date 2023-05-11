@@ -57,6 +57,7 @@
     <li><a href="#contact">Contact</a></li>
     <li><a href="#die-medocino">Die medocino</a></li>
     <li><a href="#support">Support</a></li>
+    <li><a href="#lizenz">Lizenz</a></li>
   </ol>
 </details>
 
