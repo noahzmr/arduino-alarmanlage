@@ -414,6 +414,8 @@ Die folgende Schaltplan-Skizze zeigt den elektronischen Schaltkreis der Arduino-
 
 ## Contact
 
+Hier finden Sie alle notwendigen Informationen, um weitere Informationen über mich zu erhalten oder um Kontakt aufzunehmen. Wenn Sie Fragen zu diesem Projekt haben, nutzen Sie gerne den [![GitHub](https://img.shields.io/badge/Discussions-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/noahzmr/arduino-alarmanlage/discussions) Teil.
+
 <div style='display: flex; flex-direction: row; justify-content: space-around; align-items: center;'>
 
 [![XING](https://img.shields.io/badge/xing-%23006567.svg?style=for-the-badge&logo=xing&logoColor=white)](https://www.xing.com/profile/NoahDanyael_Zeumer/)
