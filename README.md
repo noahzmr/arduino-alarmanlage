@@ -356,9 +356,15 @@ void metalConnection()
 
 ### Verkabelung
 
+Neben dem Code und dem Abhängigkeitsdiagramm möchten wir Ihnen auch die Verkabelung der Alarmanlage präsentieren. In diesem Abschnitt finden Sie eine Skizze der Verkabelung, erstellt mit Tinkercad, sowie das tatsächliche Ergebnis in der Realität.
+
+Nachdem Sie die Verkabelung anhand der Skizze durchgeführt haben, präsentieren wir Ihnen das tatsächliche Ergebnis der Alarmanlage in der Realität. Die Komponenten sind entsprechend der Verkabelungsskizze miteinander verbunden und einsatzbereit. Sie können das reale Ergebnis als visuelle Referenz für Ihre eigene Alarmanlage nutzen.
+
 ![Verkabelung](/img/arduino.png)
 
 ### Elektronische Schaltkreis
+
+Die folgende Schaltplan-Skizze zeigt den elektronischen Schaltkreis der Arduino-Alarmanlage. Sie wurde mit Tinkercad erstellt und bietet Ihnen einen übersichtlichen Blick auf die Verbindungen zwischen den Komponenten. Der Schaltplan dient als Referenz für den Aufbau Ihrer eigenen Alarmanlage.
 
 <img src="img/electronic_circuit.svg" alt="electronic_circuit">
 
