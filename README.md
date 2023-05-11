@@ -362,6 +362,9 @@ Nachdem Sie die Verkabelung anhand der Skizze durchgeführt haben, präsentieren
 
 ![Verkabelung](/img/arduino.png)
 
+![Top](/img/top.png)
+![Front](/img/front.png)
+
 ### Elektronische Schaltkreis
 
 Die folgende Schaltplan-Skizze zeigt den elektronischen Schaltkreis der Arduino-Alarmanlage. Sie wurde mit Tinkercad erstellt und bietet Ihnen einen übersichtlichen Blick auf die Verbindungen zwischen den Komponenten. Der Schaltplan dient als Referenz für den Aufbau Ihrer eigenen Alarmanlage.
