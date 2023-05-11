@@ -94,7 +94,7 @@ void blink(const char *color)
     delay(delayTime);
     setColor(0, 0, 0);
     delay(delayTime);
-    if (millis() - startTime >= 20000)
+    if (millis() - startTime >= 20000 && color != "alert")
     {
       delayTime = 100;
     }
@@ -104,7 +104,6 @@ void blink(const char *color)
     setAlarmOn();
   }
 }
-
 
 void waitForButtonDoublePress()
 {
