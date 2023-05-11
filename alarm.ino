@@ -31,8 +31,8 @@ void loop()
   waitForButtonDoublePress();
 }
 
-void displayMsg(const char* msg) {
-  setColor(255, 0, 0);
+void displayMsg(const char *msg)
+{
   lcd.clear();
   lcd.setCursor(0, 0);
   lcd.print("Alarmanlage");
@@ -41,7 +41,6 @@ void displayMsg(const char* msg) {
   Serial.println(msg);
 }
 
-
 void setColor(int red, int green, int blue)
 {
   analogWrite(5, red);
@@ -49,14 +48,16 @@ void setColor(int red, int green, int blue)
   analogWrite(7, blue);
 }
 
-void blinkRed()
+void blink(const char *color)
 {
   int redValue = 255;
+  int blueValue = 255;
   int delayTime = 200;
   unsigned long startTime = millis();
   int buttonCount = 0;
   unsigned long lastButtonPressTime = 0;
   unsigned long debounceDelay = 50;
+
   while (millis() - startTime < 30000)
   {
     int buttonState = digitalRead(buttonPin);
@@ -71,7 +72,25 @@ void blinkRed()
         break;
       }
     }
-    setColor(redValue, 0, 0);
+    if (color == "orange")
+    {
+      alarmEnabled = true;
+      setColor(255, 128, 0);
+    }
+    else if (color == "red")
+    {
+      setColor(redValue, 0, 0);
+    }
+    else if (color == "alert")
+    {
+      setColor(redValue, 0, blueValue);
+      delay(delayTime);
+      setColor(0, 0, 0);
+      delay(delayTime);
+      setColor(0, 0, blueValue);
+      delay(delayTime);
+      setColor(redValue, 0, 0);
+    }
     delay(delayTime);
     setColor(0, 0, 0);
     delay(delayTime);
@@ -80,26 +99,12 @@ void blinkRed()
       delayTime = 100;
     }
   }
+  if (alarmEnabled)
+  {
+    setAlarmOn();
+  }
 }
 
-void blinkRedBlue()
-{
-  int redValue = 255;
-  int blueValue = 255;
-  Serial.println("Blink red and Blue");
-  for (int i = 0; i < 10; i++)
-  {
-    setColor(redValue, 0, blueValue);
-    delay(200);
-    setColor(0, 0, 0);
-    delay(200);
-    setColor(0, 0, blueValue);
-    delay(200);
-    setColor(redValue, 0, 0);
-    delay(200);
-  }
-  setColor(0, 0, 0);
-}
 
 void waitForButtonDoublePress()
 {
@@ -139,7 +144,7 @@ void waitForButtonDoublePress()
     Serial.print("Double Click!\n");
     if (!alarmEnabled)
     {
-      blinkOrange();
+      blink("orange");
     }
     else
     {
@@ -166,44 +171,6 @@ void setAlarmOff()
   alarmTriggered = false;
 }
 
-void blinkOrange()
-{
-  int delayTime = 200;
-  alarmEnabled = true;
-  int buttonCount = 0;
-  unsigned long lastButtonPressTime = 0;
-  unsigned long debounceDelay = 50;
-
-  unsigned long startTime = millis();
-  while (millis() - startTime < 30000)
-  {
-    int buttonState = digitalRead(buttonPin);
-    if (buttonState == LOW && (millis() - lastButtonPressTime) > debounceDelay)
-    {
-      lastButtonPressTime = millis();
-      buttonCount++;
-      if (buttonCount == 2)
-      {
-        Serial.println("Double Click!");
-        setAlarmOff();
-        break;
-      }
-    }
-    setColor(255, 128, 0);
-    delay(delayTime);
-    setColor(0, 0, 0);
-    delay(delayTime);
-    if (millis() - startTime >= 20000)
-    {
-      delayTime = 100;
-    }
-  }
-  if (alarmEnabled)
-  {
-    setAlarmOn();
-  }
-}
-
 void checkMotionSensor()
 {
 
@@ -221,14 +188,14 @@ void checkMotionSensor()
       {
         Serial.println("TRIGEERD THE ALERT");
         Serial.println(sensorValue);
-        blinkRedBlue();
+        blink("alert");
       }
       else
       {
         Serial.println("Countdown for shutdown");
         Serial.println(sensorValue);
         alarmTriggered = true;
-        blinkRed();
+        blink("red");
       }
       unsigned long startTime = millis();
       while (millis() - startTime < 30000)
