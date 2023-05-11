@@ -37,6 +37,7 @@ void displayMsg(const char *msg)
   lcd.setCursor(0, 1);
   lcd.print(msg);
   Serial.println(msg);
+  delay(50)
 }
 
 void setColor(int red, int green, int blue)
