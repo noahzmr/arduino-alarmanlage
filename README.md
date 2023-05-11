@@ -1,5 +1,80 @@
 # Arduino Alarmanlage
 
+<br />
+<div align="center">
+  <a href="https://github.com/noahzmr/react-chat">
+    <img src="https://avatars.githubusercontent.com/u/65290559?v=4" alt="Logo" width="80" height="80">
+  </a>
+
+  <h3 align="center">React Chat App</h3>
+
+  <p align="center">
+    A little inspiration for people who want to start a chat app with React!
+    <br />
+    <a href="https://github.com/noahzmr/react-chat"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://chat.noerkelit.online/">View Live Demo</a>
+    ·
+    <a href="https://github.com/noahzmr/react-chat/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/noahzmr/react-chat/discussions">Request Feature</a>
+  </p>
+</div>
+
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#introduction">Introduction</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li><a href="#code">Code</a>
+        <ul>
+            <li><a href="#setup-funktion">Setup-Funktion</a></li>
+            <li><a href="#loop-funktion">Loop-Funktion</a></li>
+            <li><a href="#displaymsg-funktion">displayMsg-Funktion</a></li>
+            <li><a href="#setcolor-funktion">setColor-Funktion</a></li>
+            <li><a href="#blink-funktion">blink-Funktion</a></li>
+            <li><a href="#waitforbuttondoublepress-funktion">waitForButtonDoublePress-Funktion</a></li>
+            <li><a href="#setalarmon-funktion">setAlarmOn-Funktion</a></li>
+            <li><a href="#setalarmoff-funktion">setAlarmOff-Funktion</a></li>
+            <li><a href="#metalconnection-funktion">metalConnection-Funktion</a></li>
+        </ul>
+    </li>
+    <li><a href="architecture">Architecture</a>
+        <ul>
+            <li><a href="#verkabelung">Verkabelung</a></li>
+            <li><a href="#elektronische-schaltkreis">Elektronische Schaltkreis</a></li>
+        </ul>
+    </li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#support">Support</a></li>
+  </ol>
+</details>
+
+## Einleitung
+
+Willkommen zur Dokumentation des spannenden Arduino-Raspberry Projekts, das sich rund um die Simulation einer Alarmanlage dreht. Diese innovative Projektidee wurde entwickelt, um Einsteigern einen faszinierenden Einblick in die aufregende Welt des Arduino zu ermöglichen. Hierbei verbinden wir die Leistungsfähigkeit des Arduino-Mikrocontrollers mit den vielfältigen Möglichkeiten des Raspberry Pi-Minicomputers, um eine interaktive und benutzerfreundliche Alarmanlage zu schaffen.
+
+Dieses Projekt bietet Ihnen eine großartige Gelegenheit, Ihre Fähigkeiten in der Hardwareprogrammierung und -integration zu erweitern, indem Sie praktische Erfahrungen sammeln. Durch die Schritt-für-Schritt-Anleitung und die detaillierten Erklärungen werden Sie in die Lage versetzt, die Grundlagen der Arduino-Programmierung zu erlernen und Ihr Verständnis für elektronische Komponenten und ihre Zusammenspiel zu vertiefen.
+
+Diese Alarmanlage-Simulation wird Ihnen helfen, das Potenzial des Arduino-Mikrocontrollers voll auszuschöpfen, indem Sie verschiedene Sensoren und Aktoren verwenden. Sie werden lernen, wie man Bewegungssensoren und Türkontakte einsetzt, um Eindringlinge zu erkennen, und wie man einen Alarm auslöst, um auf mögliche Sicherheitsverletzungen aufmerksam zu machen. Darüber hinaus werden Sie erfahren, wie man über den Raspberry Pi eine Benutzeroberfläche erstellt, um das System zu steuern und Benachrichtigungen zu empfangen.
+
+Egal, ob Sie bereits Erfahrung mit Arduino und Raspberry Pi haben oder ob Sie neu in der Welt der Mikrocontroller und der Elektronik sind, dieses Projekt ist ein idealer Einstiegspunkt. Es bietet Ihnen die Möglichkeit, Ihre Kreativität einzusetzen, eigene Ideen einzubringen und Ihr Wissen kontinuierlich zu erweitern.
+
+Also lassen Sie uns gemeinsam in diese faszinierende Welt eintauchen und entdecken, wie wir mit Arduino und Raspberry Pi eine beeindruckende Alarmanlage simulieren können!
+
+### built with
+
+[![Arduino](https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white)](https://www.arduino.cc/)
+[![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-A22846?style=for-the-badge&logo=Raspberry%20Pi&logoColor=white)](https://www.raspberrypi.org/)
+[![Elegoo](https://img.shields.io/badge/Elegoo-0E68C2?style=for-the-badge&logo=elegoo&logoColor=white)](https://www.elegoo.com/)
+[![Tinkercad](https://img.shields.io/badge/Tinkercad-222F29?style=for-the-badge&logo=tinkercad&logoColor=white)](https://www.tinkercad.com/)
+[![Mermaid](https://img.shields.io/badge/Mermaid-003B6F?style=for-the-badge&logo=mermaid&logoColor=white)](https://mermaid-js.github.io/mermaid/)
+
 ## Code
 
 ### Variablen und Bibliotheken
@@ -240,3 +315,33 @@ void metalConnection()
   }
 }
 ```
+
+## Architecture
+
+### Verkabelung
+
+![Verkabelung](/img/arduino.png)
+
+### Elektronische Schaltkreis
+
+<img src="img/electronic_circuit.svg" alt="electronic_circuit">
+
+## Contact
+
+<div style='display: flex; flex-direction: row; justify-content: space-around; align-items: center;'>
+
+[![XING](https://img.shields.io/badge/xing-%23006567.svg?style=for-the-badge&logo=xing&logoColor=white)](https://www.xing.com/profile/NoahDanyael_Zeumer/)
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5?style=for-the-badge&logo=LinkedIn&logoColor=%23FFFFFF)](https://www.linkedin.com/in/noah-zeumer-34b5081a5/?originalSubdomain=de)
+
+[![IONOS Email](https://img.shields.io/badge/IONOS%20Email-004080?style=for-the-badge&logo=mail.ru&logoColor=white)](mailto:noah@noerkelit.online)
+
+<a href='https://taag.co/GxxtAjXSpr1679622602xuDhbkVpDX' target="_blank"><img style="width: 100px;" alt='qr code medocino' src='img/qr.svg'/></a>
+
+</div>
+
+## Support
+
+If you like this project and it helped you I would appreciate a little support!
+
+<a href='https://www.buymeacoffee.com/noahdnylzmr' target="_blank"><img alt='buy me a coffee' src='https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png'/></a>
