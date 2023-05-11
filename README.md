@@ -556,6 +556,10 @@ F --> E
 
 ## Support
 
-If you like this project and it helped you I would appreciate a little support!
+Wenn du meine Arbeit unterstützen möchtest, kannst du mir gerne eine Tasse Kaffee spendieren. Besuche dazu einfach meine [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/noahdnylzmr)
+und gib einen Betrag deiner Wahl ein. Ich bin dankbar für jede Unterstützung.
+Vielen Dank im Voraus!
 
-<a href='https://www.buymeacoffee.com/noahdnylzmr' target="_blank"><img alt='buy me a coffee' src='https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png'/></a>
+## Lizenz
+
+Dieses Projekt ist lizenziert unter der [BSD 2-Clause License](https://github.com/noahzmr/arduino-alarmanlage/blob/main/LICENSE.md). Bitte beachten Sie die Bedingungen und Bestimmungen dieser Lizenz.
