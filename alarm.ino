@@ -200,17 +200,6 @@ void checkMotionSensor()
       {
         waitForButtonDoublePress();
       }
-
-      if (alarmEnabled)
-      {
-        Serial.println("Still on!");
-        alarmTriggered = true;
-      }
-      else
-      {
-        Serial.println(alarmTriggered);
-        Serial.println(alarmEnabled);
-      }
     }
   }
 }
