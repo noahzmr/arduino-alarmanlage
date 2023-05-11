@@ -22,7 +22,8 @@ void setup()
   pinMode(10, OUTPUT);
   pinMode(9, OUTPUT);
   setColor(0, 255, 0);
-
+  lcd.setCursor(0, 0);
+  lcd.print("Alarmanlage");
   displayMsg("unscharf");
 }
 
@@ -33,9 +34,6 @@ void loop()
 
 void displayMsg(const char *msg)
 {
-  lcd.clear();
-  lcd.setCursor(0, 0);
-  lcd.print("Alarmanlage");
   lcd.setCursor(0, 1);
   lcd.print(msg);
   Serial.println(msg);
