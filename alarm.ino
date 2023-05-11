@@ -1,6 +1,6 @@
 #include <LiquidCrystal.h>
 
-const int rs = 2, en = 3, d4 = 13, d5 = 12, d6 = 11, d7 = 10, v0 = 9, a = 8, rw = 4;
+const int rs = 9, en = 7, d4 = 6, d5 = 5, d6 = 4, d7 = 3, v0 = 10, a = 2, rw = 8;
 const int buttonPin = A0;
 const int touchPin = A1;
 bool alarmEnabled = false;
@@ -42,9 +42,9 @@ void displayMsg(const char *msg)
 
 void setColor(int red, int green, int blue)
 {
-  analogWrite(5, red);
-  analogWrite(6, green);
-  analogWrite(7, blue);
+  analogWrite(13, red);
+  analogWrite(12, green);
+  analogWrite(11, blue);
 }
 
 void blink(const char *color)
@@ -125,7 +125,7 @@ void waitForButtonDoublePress()
       {
         if (alarmEnabled)
         {
-          checkMotionSensor();
+          metalConnection();
         }
         delay(50);
       }
@@ -169,7 +169,7 @@ void setAlarmOff()
   alarmTriggered = false;
 }
 
-void checkMotionSensor()
+void metalConnection()
 {
 
   int sensorValue = analogRead(touchPin);
