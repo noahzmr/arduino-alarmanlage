@@ -24,7 +24,7 @@ void setup()
   setColor(0, 255, 0);
   lcd.setCursor(0, 0);
   lcd.print("Alarmanlage");
-  displayMsg("unscharf");
+  displayMsg("Unscharf");
 }
 
 void loop()
@@ -154,7 +154,7 @@ void waitForButtonDoublePress()
 void setAlarmOn()
 {
   setColor(255, 0, 0);
-  displayMsg("Scharf");
+  displayMsg("Active");
   Serial.print("setAlarmOn\n");
   alarmEnabled = true;
 }
@@ -162,7 +162,7 @@ void setAlarmOn()
 void setAlarmOff()
 {
   setColor(0, 255, 0);
-  displayMsg("Unscharf");
+  displayMsg("Unactive");
   Serial.print("setAlarmOff\n");
   alarmEnabled = false;
   alarmTriggered = false;
@@ -180,7 +180,7 @@ void checkMotionSensor()
     }
     else
     {
-      displayMsg("ausgelöst");
+      displayMsg("ALARM");
       if (alarmTriggered)
       {
         Serial.println("TRIGEERD THE ALERT");
