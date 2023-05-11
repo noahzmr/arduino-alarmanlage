@@ -29,6 +29,12 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
+    <li><a href="#anforderungen-und-komponenten">Anforderungen und Komponenten</a>
+      <ul>
+        <li><a href="#verbindung-von-arduino-und-raspberry-pi">Verbindung von Arduino und Raspberry Pi</a></li>
+        <li><a href="#herunterladen-der-arduino-ide">Herunterladen der Arduino IDE</a></li>
+      </ul>
+    </li>
     <li><a href="#code">Code</a>
         <ul>
             <li><a href="#setup-funktion">Setup-Funktion</a></li>
@@ -49,21 +55,22 @@
         </ul>
     </li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="#die-medocino">Die medocino</a></li>
     <li><a href="#support">Support</a></li>
   </ol>
 </details>
 
 ## Einleitung
 
-Willkommen zur Dokumentation des spannenden Arduino-Raspberry Projekts, das sich rund um die Simulation einer Alarmanlage dreht. Diese innovative Projektidee wurde entwickelt, um Einsteigern einen faszinierenden Einblick in die aufregende Welt des Arduino zu ermöglichen. Hierbei verbinden wir die Leistungsfähigkeit des Arduino-Mikrocontrollers mit den vielfältigen Möglichkeiten des Raspberry Pi-Minicomputers, um eine interaktive und benutzerfreundliche Alarmanlage zu schaffen.
+Willkommen bei dem Arduino-Alarmanlagen-Projekts, das sich rund um die Simulation einer Alarmanlage dreht. Dieses Projekt wurde entwickelt, um Einsteigern einen faszinierenden Einblick in die Welt des Arduino zu ermöglichen. Hierbei nutzen wir die Leistungsfähigkeit des Arduino-Mikrocontrollers, um eine interaktive und benutzerfreundliche Alarmanlage zu schaffen.
 
-Dieses Projekt bietet Ihnen eine großartige Gelegenheit, Ihre Fähigkeiten in der Hardwareprogrammierung und -integration zu erweitern, indem Sie praktische Erfahrungen sammeln. Durch die Schritt-für-Schritt-Anleitung und die detaillierten Erklärungen werden Sie in die Lage versetzt, die Grundlagen der Arduino-Programmierung zu erlernen und Ihr Verständnis für elektronische Komponenten und ihre Zusammenspiel zu vertiefen.
+Dieses Projekt, das mit Unterstützung eines Praktikanten der 9. Klasse bei der medocino Hamburg GmbH entstanden ist, bietet Ihnen eine großartige Gelegenheit, Ihre Fähigkeiten in der Hardwareprogrammierung und -integration zu erweitern, indem Sie praktische Erfahrungen sammeln. Durch die Schritt-für-Schritt-Anleitung und die detaillierten Erklärungen werden Sie in die Lage versetzt, die Grundlagen der Arduino-Programmierung zu erlernen und Ihr Verständnis für elektronische Komponenten und ihre Zusammenspiel zu vertiefen.
 
-Diese Alarmanlage-Simulation wird Ihnen helfen, das Potenzial des Arduino-Mikrocontrollers voll auszuschöpfen, indem Sie verschiedene Sensoren und Aktoren verwenden. Sie werden lernen, wie man Bewegungssensoren und Türkontakte einsetzt, um Eindringlinge zu erkennen, und wie man einen Alarm auslöst, um auf mögliche Sicherheitsverletzungen aufmerksam zu machen. Darüber hinaus werden Sie erfahren, wie man über den Raspberry Pi eine Benutzeroberfläche erstellt, um das System zu steuern und Benachrichtigungen zu empfangen.
+Diese Alarmanlage-Simulation wird Ihnen helfen, das Potenzial des Arduino-Mikrocontrollers voll auszuschöpfen, indem Sie verschiedene Sensoren und Aktoren verwenden. Sie werden lernen, wie man Bewegungssensoren und Türkontakte einsetzt, um Eindringlinge zu erkennen, und wie man einen Alarm auslöst, um auf mögliche Sicherheitsverletzungen aufmerksam zu machen.
 
-Egal, ob Sie bereits Erfahrung mit Arduino und Raspberry Pi haben oder ob Sie neu in der Welt der Mikrocontroller und der Elektronik sind, dieses Projekt ist ein idealer Einstiegspunkt. Es bietet Ihnen die Möglichkeit, Ihre Kreativität einzusetzen, eigene Ideen einzubringen und Ihr Wissen kontinuierlich zu erweitern.
+Egal, ob Sie bereits Erfahrung mit Arduino haben oder ob Sie neu in der Welt der Mikrocontroller und der Elektronik sind, dieses Projekt ist ein idealer Einstiegspunkt. Es bietet Ihnen die Möglichkeit, Ihre Kreativität einzusetzen, eigene Ideen einzubringen und Ihr Wissen kontinuierlich zu erweitern.
 
-Also lassen Sie uns gemeinsam in diese faszinierende Welt eintauchen und entdecken, wie wir mit Arduino und Raspberry Pi eine beeindruckende Alarmanlage simulieren können!
+Also lassen Sie uns gemeinsam in diese faszinierende Welt eintauchen und entdecken, wie wir mit Arduino eine beeindruckende Alarmanlage simulieren können!
 
 ### Built with
 
@@ -76,6 +83,42 @@ Also lassen Sie uns gemeinsam in diese faszinierende Welt eintauchen und entdeck
 [![Mermaid](https://img.shields.io/badge/Mermaid-003B6F?style=for-the-badge&logo=mermaid&logoColor=white)](https://mermaid-js.github.io/mermaid/)
 
 </div>
+
+## Anforderungen und Komponenten
+
+| Komponente          | Beschreibung                                                             |
+| ------------------- | ------------------------------------------------------------------------ |
+| Arduino Uno         | Mikrocontroller-Board als zentrale Steuereinheit des Projekts            |
+| Raspberry Pi 4      | Single-Board-Computer zur Benutzeroberfläche und Kommunikation           |
+| LCD1602             | 16x2-Zeichen-LCD-Display zur Anzeige von Informationen                   |
+| Button              | Einfacher Taster als Benutzereingabe                                     |
+| RGB LED             | Leuchtdiode zur visuellen Anzeige des Alarmanlagenzustands               |
+| Metall-Touch-Sensor | Berührungsempfindlicher Sensor zur Erkennung von Sicherheitsverletzungen |
+
+### Verbindung von Arduino und Raspberry Pi
+
+Um den Arduino mit dem Raspberry Pi zu verbinden, gehen Sie wie folgt vor:
+
+<ol>
+  <li>Verbinden Sie den USB-Anschluss des Arduino mit einem USB-Anschluss des Raspberry Pi. Dadurch wird die serielle Kommunikation zwischen den beiden Geräten hergestellt.</li>
+  <li>Stellen Sie sicher, dass Sie die neueste Version der Arduino IDE auf Ihrem Raspberry Pi installiert haben. Die Arduino IDE ist die Entwicklungsumgebung, mit der Sie den Arduino programmieren können.</li>
+  <li>Öffnen Sie die Arduino IDE auf Ihrem Raspberry Pi und navigieren Sie zu "Werkzeuge" > "Board" und wählen Sie "Arduino Uno" aus. Dadurch wird der Arduino Uno als Zielplattform für Ihre Programmierung festgelegt.</li>
+  <li>Wählen Sie unter "Werkzeuge" > "Port" den entsprechenden seriellen Port aus, über den der Arduino mit dem Raspberry Pi verbunden ist.</li>
+</ol>
+
+### Herunterladen der Arduino IDE
+
+Um die Arduino IDE herunterzuladen, folgen Sie diesen Schritten:
+
+<ol>
+  <li>Öffnen Sie einen Webbrowser auf Ihrem Computer und besuchen Sie die offizielle Arduino-Website (<a href="https://www.arduino.cc">https://www.arduino.cc</a>).</li>
+  <li>Klicken Sie auf den Link "Software", um zur Download-Seite zu gelangen.</li>
+  <li>Wählen Sie das Betriebssystem aus, das auf Ihrem Computer läuft (z. B. Windows, macOS oder Linux).</li>
+  <li>Klicken Sie auf den Download-Link, um den Installationsprozess zu starten.</li>
+  <li>Nach Abschluss des Downloads führen Sie die Installationsdatei aus und folgen Sie den Anweisungen auf dem Bildschirm, um die Arduino IDE auf Ihrem Computer zu installieren.</li>
+</ol>
+
+Nachdem wir nun einen Überblick über die Anforderungen und Komponenten erhalten haben, ist es an der Zeit, in den Coding-Teil einzusteigen. In diesem Abschnitt werden wir den Arduino-Code für die Alarmanlage genauer betrachten und Schritt für Schritt erklären. Du wirst lernen, wie die einzelnen Komponenten miteinander interagieren und wie der Code aufgebaut ist, um die gewünschte Funktionalität zu erreichen. Bist du bereit, tiefer in die Welt des Programmierens einzutauchen? Lass uns loslegen!
 
 ## Code
 
@@ -382,6 +425,130 @@ Die folgende Schaltplan-Skizze zeigt den elektronischen Schaltkreis der Arduino-
 <a href='https://taag.co/GxxtAjXSpr1679622602xuDhbkVpDX' target="_blank"><img style="width: 100px;" alt='qr code medocino' src='img/qr.svg'/></a>
 
 </div>
+
+## Die medocino
+
+Die medocino Hamburg GmbH ist ein erfahrenes Systemhaus und IT-Dienstleister, das sich auf den Aufbau und die Betreuung von IT-Infrastrukturen spezialisiert hat. Mit einem Team engagierter IT-Experten bieten wir umfassende Dienstleistungen und maßgeschneiderte Lösungen für namhafte Konzerne, mittelständische Unternehmen und Start-ups.
+
+Unsere Kunden schätzen unsere Fachkompetenz, Erfahrung und Leidenschaft für IT. Wir verstehen IT als solides Handwerk und bieten individuelle Lösungen, die auf die spezifischen Anforderungen jedes Unternehmens zugeschnitten sind. Dabei setzen wir auf zuverlässige Technologien, innovative Ansätze und bewährte Methoden.
+
+Als medocino Gruppe bieten wir eine ganzheitliche Betreuung und stehen unseren Kunden als verlässlicher Partner zur Seite. Unser Team besteht aus hochqualifizierten Mitarbeitern, die nicht nur technisch versiert sind, sondern auch eine hohe Kundenorientierung mitbringen.
+
+Aber nicht nur als Dienstleister sind wir tätig, sondern auch als Ausbildungsbetrieb für angehende Fachinformatiker Systemintegration. Ich spreche aus Erfahrung, da ich aktuell eine Ausbildung bei der medocino absolviere und Teil des Teams bin. Bei uns hast du die Möglichkeit, eine Ausbildung im IT-Bereich zu absolvieren und ebenfalls Teil unseres Teams zu werden. Ich kann aus eigener Erfahrung sagen, dass wir großen Wert auf eine fundierte Ausbildung legen und dir die Chance bieten, praktische Erfahrungen zu sammeln und dich fachlich weiterzuentwickeln.
+
+Unser Ziel ist es, die IT-Infrastruktur unserer Kunden zu optimieren, Prozesse zu verbessern und echten Mehrwert zu schaffen. Wir bieten umfangreiche Leistungen in den Bereichen Speichertechnologie, Infrastruktur-Automatisierung, Hochverfügbarkeitslösungen und Rechenzentrums-Dienstleistungen.
+
+Vertrauen Sie auf die medocino Gruppe, um Ihre IT-Herausforderungen zu bewältigen und Ihr Unternehmen erfolgreich voranzubringen. Kontaktieren Sie uns noch heute und erfahren Sie, wie wir Ihnen helfen können.
+
+<a href='https://medocino.net/' target="_blank"><img alt='medocino' style="width: 150px;" src='https://medocino.net/wp-content/uploads/2020/09/Logo-neu-1024x271.png'/></a>
+
+```mermaid
+graph LR
+F(Medocino)
+
+A(Dienstleistungen)
+A --> B(Beratung)
+A --> P(Planung)
+A --> O(Optimierung)
+A --> U(Unterstützung)
+A --> AN(Analyse)
+A --> E(Entwicklung)
+A --> BE(Betrieb)
+A --> UM(Umsetzung)
+
+B(Beratung)
+P(Planung)
+O(Optimierung)
+U(Unterstützung)
+AN(Analyse)
+E(Entwicklung)
+BE(Betrieb)
+UM(Umsetzung)
+
+
+B(Wegbereitung für Unternehmensziele)
+B --> IT(IT-Entlastung)
+B --> VA(Verteiltes Arbeiten)
+B --> SV(Standortverwaltung)
+B --> RM(Risikominimierung)
+B --> CP(Compliance)
+B --> ZD(Zentralisierte Datenhaltung)
+B --> DS(Datenschutz)
+B --> ES(Effizienzsteigerung)
+
+IT(IT-Entlastung)
+VA(Verteiltes Arbeiten)
+SV(Standortverwaltung)
+RM(Risikominimierung)
+CP(Compliance)
+ZD(Zentralisierte Datenhaltung)
+DS(Datenschutz)
+ES(Effizienzsteigerung)
+
+
+C(Wegbereitung für Software-Produkte & Software als Service)
+C --> NS(Netzwerksicherheit)
+C --> AV(Applikationsvirtualisierung)
+C --> SDD(Software-defined Datacenter)
+C --> MS(Monitoring/SIEM)
+C --> BDR(Backup & Disaster Recovery)
+C --> CDI(Composable disaggregated Infrastructure)
+C --> NV(Netzwerkvirtualisierung)
+C --> VS(Virenschutz)
+
+NS(Netzwerksicherheit)
+AV(Applikationsvirtualisierung)
+SDD(Software-defined Datacenter)
+MS(Monitoring/SIEM)
+BDR(Backup & Disaster Recovery)
+CDI(Composable disaggregated Infrastructure)
+NV(Netzwerkvirtualisierung)
+VS(Virenschutz)
+
+D(Wegbereitung für Plattform-Produkte & Plattform als Service)
+D --> OR(Orchestrierung)
+D --> HCI(Hyper Converged Infrastructure)
+D --> OS(Betriebssysteme)
+D --> AR(Archivierung)
+D --> SV(Storage-Virtualisierung)
+D --> SeV(Server-Virtualisierung)
+D --> CT(Container)
+D --> HIT(Hybrid IT)
+
+OR(Orchestrierung)
+HCI(Hyper Converged Infrastructure)
+OS(Betriebssysteme)
+AR(Archivierung)
+SV(Storage-Virtualisierung)
+SeV(Server-Virtualisierung)
+CT(Container)
+HIT(Hybrid IT)
+
+E(Wegbereitung für Infrastruktur-Produkte & Infrastruktur als Service)
+E --> PS(Primär-Speicher)
+E --> SS(Sekundär-Speicher)
+E --> SN(Speicher-Netzwerke)
+E --> RZ(RZ-Betrieb)
+E --> SV(Server)
+E --> EN(Ethernet-Netzwerke)
+E --> EFP(Enterprise File Data Platform)
+E --> HPC(High Performance Computing)
+
+PS(Primär-Speicher)
+SS(Sekundär-Speicher)
+SN(Speicher-Netzwerke)
+RZ(RZ-Betrieb)
+SV(Server)
+EN(Ethernet-Netzwerke)
+EFP(Enterprise File Data Platform)
+HPC(High Performance Computing)
+
+F --> A
+F --> B
+F --> C
+F --> D
+F --> E
+```
 
 ## Support
 
