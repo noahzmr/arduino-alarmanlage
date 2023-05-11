@@ -428,6 +428,8 @@ Die folgende Schaltplan-Skizze zeigt den elektronischen Schaltkreis der Arduino-
 
 ## Die medocino
 
+<a href='https://medocino.net/' target="_blank"><img alt='medocino' style="width: 150px;" src='https://medocino.net/wp-content/uploads/2020/09/Logo-neu-1024x271.png'/></a>
+
 Die medocino Hamburg GmbH ist ein erfahrenes Systemhaus und IT-Dienstleister, das sich auf den Aufbau und die Betreuung von IT-Infrastrukturen spezialisiert hat. Mit einem Team engagierter IT-Experten bieten wir umfassende Dienstleistungen und maßgeschneiderte Lösungen für namhafte Konzerne, mittelständische Unternehmen und Start-ups.
 
 Unsere Kunden schätzen unsere Fachkompetenz, Erfahrung und Leidenschaft für IT. Wir verstehen IT als solides Handwerk und bieten individuelle Lösungen, die auf die spezifischen Anforderungen jedes Unternehmens zugeschnitten sind. Dabei setzen wir auf zuverlässige Technologien, innovative Ansätze und bewährte Methoden.
@@ -440,7 +442,7 @@ Unser Ziel ist es, die IT-Infrastruktur unserer Kunden zu optimieren, Prozesse z
 
 Vertrauen Sie auf die medocino Gruppe, um Ihre IT-Herausforderungen zu bewältigen und Ihr Unternehmen erfolgreich voranzubringen. Kontaktieren Sie uns noch heute und erfahren Sie, wie wir Ihnen helfen können.
 
-<a href='https://medocino.net/' target="_blank"><img alt='medocino' style="width: 150px;" src='https://medocino.net/wp-content/uploads/2020/09/Logo-neu-1024x271.png'/></a>
+Im Folgenden präsentieren ich Ihnen einen grafischen Überblick über die vielfältigen Dienstleistungen, die die medocino Hamburg GmbH anbietet.
 
 ```mermaid
 graph LR
