@@ -97,6 +97,8 @@ Also lassen Sie uns gemeinsam in diese faszinierende Welt eintauchen und entdeck
 | RGB LED             | Leuchtdiode zur visuellen Anzeige des Alarmanlagenzustands               |
 | Metall-Touch-Sensor | Berührungsempfindlicher Sensor zur Erkennung von Sicherheitsverletzungen |
 
+Die Sensoren sind alle in dem [ELEGOO Upgraded 37 in 1 Sensor Modules Kit](https://www.elegoo.com/en-de/products/elegoo-37-in-1-sensor-kit?gclid=Cj0KCQjwpPKiBhDvARIsACn-gzD1Z3hR3POKkLCtrBkvIGGlrAgRS2OStIZJ8L-IoUkdrRBwN_xvKvkaAqYoEALw_wcB)
+
 ### Verbindung von Arduino und Raspberry Pi
 
 Um den Arduino mit dem Raspberry Pi zu verbinden, gehen Sie wie folgt vor:
@@ -458,7 +460,7 @@ Nachdem du ein Tutorial abgeschlossen hast und grundlegende Kenntnisse erworben 
    Ein Beispiel wie man ein Arduino mit einem Raspberry Pi zusammen nutzen kann kannst du [![GitHub](https://img.shields.io/badge/hier-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/noahzmr/scooter-app) finden.
 
 5. Erweiterungen und Verbesserungen: Experimentiere mit neuen Funktionen und Verbesserungen für dein Projekt. Du könntest beispielsweise eine Zeitschaltuhr hinzufügen, um die Lichter zu bestimmten Zeiten automatisch ein- und auszuschalten, oder Benachrichtigungen über Ereignisse per E-Mail oder SMS versenden.
-Wenn es ums Thema benachrichtung geht könnte die [![GitHub](https://img.shields.io/badge/React%20Chat-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/noahzmr/scooter-app) interessant sein.
+   Wenn es ums Thema benachrichtung geht könnte die [![GitHub](https://img.shields.io/badge/React%20Chat-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/noahzmr/scooter-app) interessant sein.
 
 6. Dokumentation und Teilen: Dokumentiere deine Fortschritte und teile dein Projekt mit der Community. Du kannst einen Blog schreiben, ein Video-Tutorial erstellen oder dein Projekt auf Plattformen wie GitHub oder Instructables veröffentlichen, um anderen bei ähnlichen Projekten zu helfen oder Feedback zu erhalten.
 
