@@ -561,6 +561,12 @@ F --> D
 F --> E
 ```
 
+Ich bin unglaublich dankbar, dass ich die Möglichkeit habe, meine Ausbildung bei Medocino zu absolvieren. Hier bekomme ich nicht nur die Chance, mich mit den klassischen Aufgaben der Systemintegration vertraut zu machen, sondern auch Einblicke in die spannenden Bereiche der Softwareentwicklung und der IT-Sicherheit zu erhalten.
+
+Was das Arbeiten hier besonders bereichernd macht, ist die Vielfalt an Services, die mir zur Verfügung stehen. Ich kann beispielsweise auf Tools wie Sentry, GitLab und SonarQube zugreifen, um meine Arbeit zu optimieren und qualitativ hochwertige Lösungen zu entwickeln. Diese Ressourcen ermöglichen es mir, meine Fähigkeiten weiterzuentwickeln und mich kontinuierlich in meinem Fachgebiet zu verbessern.
+
+Ich bin gespannt, welche spannenden Projekte und Herausforderungen noch auf mich warten und freue mich, Teil des Medocino-Teams zu sein.
+
 ## Support
 
 Wenn du meine Arbeit unterstützen möchtest, kannst du mir gerne eine Tasse Kaffee spendieren. Besuche dazu einfach meine [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/noahdnylzmr)
