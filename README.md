@@ -419,11 +419,15 @@ Hier finden Sie alle notwendigen Informationen, um weitere Informationen über m
 
 <div style='display: flex; flex-direction: row; justify-content: space-around; align-items: center;'>
 
+<div>
+
 [![XING](https://img.shields.io/badge/xing-%23006567.svg?style=for-the-badge&logo=xing&logoColor=white)](https://www.xing.com/profile/NoahDanyael_Zeumer/)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5?style=for-the-badge&logo=LinkedIn&logoColor=%23FFFFFF)](https://www.linkedin.com/in/noah-zeumer-34b5081a5/?originalSubdomain=de)
 
 [![IONOS Email](https://img.shields.io/badge/IONOS%20Email-004080?style=for-the-badge&logo=mail.ru&logoColor=white)](mailto:noah@noerkelit.online)
+
+</div>
 
 <a href='https://taag.co/GxxtAjXSpr1679622602xuDhbkVpDX' target="_blank"><img style="width: 100px;" alt='qr code medocino' src='img/qr.svg'/></a>
 
@@ -431,7 +435,9 @@ Hier finden Sie alle notwendigen Informationen, um weitere Informationen über m
 
 ## Die medocino
 
-<a href='https://medocino.net/' target="_blank"><img alt='medocino' style="width: 150px;" src='https://medocino.net/wp-content/uploads/2020/09/Logo-neu-1024x271.png'/></a>
+<div style='display: flex; flex-direction: row; justify-content: space-around; align-items: center;'>
+  <a href='https://medocino.net/' target="_blank"><img alt='medocino' style="width: 150px;" src='https://medocino.net/wp-content/uploads/2020/09/Logo-neu-1024x271.png'/></a>
+</div>
 
 Die medocino Hamburg GmbH ist ein erfahrenes Systemhaus und IT-Dienstleister, das sich auf den Aufbau und die Betreuung von IT-Infrastrukturen spezialisiert hat. Mit einem Team engagierter IT-Experten bieten wir umfassende Dienstleistungen und maßgeschneiderte Lösungen für namhafte Konzerne, mittelständische Unternehmen und Start-ups.
 
