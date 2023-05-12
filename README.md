@@ -123,6 +123,35 @@ Nachdem wir nun einen Überblick über die Anforderungen und Komponenten erhalte
 
 ## Code
 
+Um einen Arduino zu programmieren, benötigst du die C++-Programmiersprache in Verbindung mit der Arduino-Entwicklungsumgebung (IDE). Hier ist eine kurze Übersicht über die wichtigsten Konzepte und Funktionen in C++, die für die Arduino-Programmierung relevant sind:
+
+| Konzept                    | Beschreibung                                                                                 |
+| -------------------------- | -------------------------------------------------------------------------------------------- |
+| Hauptfunktion              | Die `setup`-Funktion, in der Initialisierungen durchgeführt werden.                          |
+| Schleifenfunktion          | Die `loop`-Funktion, die den Hauptteil des Programms enthält und wiederholt ausgeführt wird. |
+| Pin-Modi                   | Festlegung des Modus der digitalen Pins (INPUT oder OUTPUT).                                 |
+| Digitale Ein- und Ausgänge | Lesen (digitalRead) und Schreiben (digitalWrite) von digitalen Pins.                         |
+| Analoge Ein- und Ausgänge  | Lesen (analogRead) und Schreiben (analogWrite) von analogen Werten.                          |
+| Bibliotheken               | Erweiterung der Funktionalität durch das Einbinden von Bibliotheken.                         |
+| Serielle Kommunikation     | Kommunikation mit dem Computer über eine serielle Verbindung (Serial).                       |
+
+Dies ist nur eine grundlegende Übersicht über die wichtigsten Aspekte der C++-Programmierung für den Arduino. Es gibt noch viele weitere fortgeschrittene Konzepte und Funktionen, die du erkunden kannst, je nachdem, was du mit deinem Arduino-Projekt erreichen möchtest. Die Arduino-Website bietet umfangreiche Ressourcen und Beispiele, um dir den Einstieg zu erleichtern.
+
+| Befehl          | Beschreibung                                                                                             |
+| --------------- | -------------------------------------------------------------------------------------------------------- |
+| `const int`     | Deklaration einer konstanten Ganzzahl.                                                                   |
+| `#include`      | Einbinden einer Bibliothek oder Header-Datei.                                                            |
+| `#define`       | Definition eines Makros zur Textersetzung.                                                               |
+| `bool`          | Datentyp für boolesche Werte (Wahr/Falsch).                                                              |
+| `void`          | Rückgabetyp einer Funktion, die keinen Wert zurückgibt.                                                  |
+| `pinMode`       | Festlegung des Modus eines Pins (INPUT, OUTPUT, INPUT_PULLUP).                                           |
+| `analogWrite`   | Ausgabe eines analogen Signals auf einem Pin.                                                            |
+| `delay`         | Verzögerung der Programmausführung für eine bestimmte Anzahl von Millisekunden.                          |
+| `unsigned long` | Vorzeichenloser ganzzahliger Datentyp für große Zahlen.                                                  |
+| `millis()`      | Funktion, die die vergangene Zeit in Millisekunden seit dem Start des Programms zurückgibt.              |
+| `Serial`        | Objekt für die serielle Kommunikation mit dem Computer.                                                  |
+| `println`       | Ausgabe von Text oder Werten über die serielle Schnittstelle, gefolgt von einem Zeilenumbruch (newline). |
+
 Im Folgenden wird der Code der Anwendung präsentiert, und vorab ist das Abhängigkeitsdiagramm, das den Ablauf und die Interaktionen der verschiedenen Funktionen veranschaulicht. Der Code ist in logische Abschnitte unterteilt und wird jeweils erläutert, um das Verständnis zu erleichtern.
 
 Das Abhängigkeitsdiagramm zeigt die Zusammenhänge und Interaktionen der verschiedenen Funktionen innerhalb der Alarmanlagenanwendung. Es vermittelt einen Überblick über den Programmfluss und hilft dabei, die Beziehungen zwischen den Funktionen zu verstehen.
